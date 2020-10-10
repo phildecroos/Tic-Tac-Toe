@@ -30,21 +30,6 @@ def is_available(input_num):
 
 
 def ai_square():
-    '''
-    This isn't the best algorithm, and it definitely could've been shortened with loops and/or recursion, but it will
-    at least tie the player unless they are actually good.
-
-    HOW THE ALGORITHM WORKS
-    The algorithm starts by looking at each square on the board and picking the first one it comes across that will win
-    the game for the computer, if there are none, it does the same thing but with squares that will block the player
-    from winning in the next turn.
-    If neither of those conditions are met it resets the board_scores list to a score of 0 for each square, and it
-    analyzes every possibly combination of moves that is left in the game, allotting 1 point to each square that is the
-    winning move for the computer.
-    I tried allocating different amounts of points based on who won in that scenario and how many moves it took, but an
-    equal amount of points for every scenario seemed to work best.
-    From my testing, I have only found three combinations of moves that beat this algorithm.
-    '''
     for x in range(1, len(board)):
         if board[x] == "[ ]":
             board[x] = "[O]"
@@ -147,7 +132,7 @@ def won(player):
 
 
 show_board()
-print("The squares in the board are numbered from 1 to 9 from top left to bottom right.")
+print("The squares in the board are numbered 1 to 9 from top left across then down.")
 print("To do a move, just type the number of the square you want to put an X on.")
 recent_move = 0
 
